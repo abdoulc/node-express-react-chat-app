@@ -27,15 +27,42 @@
     width: 400px;
     padding: 1rem;
     justify-content: space-between;
-    height: 600px;
+    height: 560px;
     flex-direction: column;
-    background-color: var(--greyColor);
+    background-color: #fff;
+    border-radius:10px;
 
 }
 
 .user-name {
-    width: 100%;
-    text-align: start;
+  width: 100%;
+  /* text-align: start; */
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+    /* background-color: gray; */
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+  .user{
+    background-color: #5757ed;
+    width: auto;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+    padding: 6px 12px;
+    margin-left: initial;
+    text-transform: uppercase
+
+  }
+
+  .room{
+    margin-right:initial;
+    background: gainsboro;
+    width: auto;
+    padding: 7px;
+    border-radius: 12px;
+    font-size: 12px;
   }
 
   .user-name  h2 {
@@ -70,10 +97,10 @@
         padding: 1rem;
       }
       .message  span {
-        color: #b4b6be;
-        font-size: 0.6rem;
+        color: #5757ed;
+        font-size: 0.85rem;
         padding-left: 0.5rem;
-        font-weight: 200;
+        font-weight: 600;
       }
 
       .mess-right {
@@ -109,7 +136,7 @@
 
       .send input {
         background-color: #404450;
-        width: 80%;
+        width: 100%;
         padding-left: 1rem;
         text-decoration: none;
         border-radius: 5px 0px 0px 5px;

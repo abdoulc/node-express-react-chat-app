@@ -58,9 +58,12 @@ function Chat({username, roomname, socket}){
     return(
         <div className="chat">
         <div className="user-name">
-          <h2>
+          <div className="user"> {username} </div> 
+          <div className="room"> {roomname} </div> 
+
+          {/* <h2>
             {username} <span style={{ fontSize: "0.7rem" }}>in {roomname}</span>
-          </h2>
+          </h2> */}
         </div>
         <div className="chat-message">
           {messages.map((i) => {
@@ -94,7 +97,7 @@ function Chat({username, roomname, socket}){
               }
             }}
           ></input>
-          <button onClick={sendData}>Send</button>
+          {/* <button onClick={sendData}>Send</button> */}
         </div>
       </div>
     )

@@ -18,20 +18,25 @@ function Homepage({ socket }) {
 
   return (
     <div className="homepage">
-      <h1>Welcome to ChatApp</h1>
-      <input
-        placeholder="Input your user name"
-        value={username}
-        onChange={(e) => setusername(e.target.value)}
-      ></input>
-      <input
-        placeholder="Input the room name"
-        value={roomname}
-        onChange={(e) => setroomname(e.target.value)}
-      ></input>
+      
+      <div className="div_form">
+      <h1>Welcome</h1>
+        <input
+          placeholder="User name"
+          value={username}
+          onChange={(e) => setusername(e.target.value)}
+        ></input>
+        <input
+          placeholder="Room name"
+          value={roomname}
+          onChange={(e) => setroomname(e.target.value)}
+        ></input>
+     
+
       <Link to={`/chat/${roomname}/${username}`}>
-        <button onClick={sendData}>Join</button>
+        <button onClick={sendData}>JOIN</button>
       </Link>
+       </div>
     </div>
   );
 }

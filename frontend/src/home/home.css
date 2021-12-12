@@ -1,37 +1,76 @@
 .homepage {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100vh;
     padding: 2rem;
-    background-color: #2d343e;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+    background: url('../images/screen-post-hjPt6OnQGtg-unsplash.jpg') no-repeat center center/cover;
     border-radius: 5px;
+    margin: 0 auto;
+    color: white;
     
+    }
+    .div_form{
+        display: flex;
+        width: 40%;
+        height:60%;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        margin-top:100px;
+        border: 1px solid black;
+        background-color: rgba(0,0,0,0.5);
+        box-shadow: inset -5px -5px rgba(0,0,0,0.5);
+        border-radius:22px;
     }
     input {
         height: 50px;
-        width: 80%;
-        background-color: #404450;
+        width: 50%;
+        background-color: rgba(0,0,0,0.5);
         border: none;
         padding-left: 1rem;
-        border-radius: 5px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        border-color: black;
+        font-size:15px;
+        font-weight:500;
+        box-shadow: inset -2px -2px rgba(0,0,0,0.5);
+        color:white;
+
+    }
+
+    input:hover{
+        border-color: #fff;
     }
         input:focus{
             outline: none;
+            border-color: #fff;
         }
     button {
       font-size: 1rem;
       padding: 0.5rem 1rem 0.5rem 1rem;
-      width: 100px;
+      width: 130px;
       border: none;
-      background-color: #ffac41;
+      background-color: rgba(0,0,0,0.7);
       border-radius: 5px;
-  
-      color: black;
+      color: white;
+      box-shadow: inset -2px -2px rgba(0,0,0,0.5);
+      outline: none;
+      border-radius: 20px;
+      font-weight:600;
+
       
     }
   
     button:hover{
         cursor: pointer;
+        background-color: rgba(255,255,255,0.1);
+
+    }
+
+    h1{
+        margin-bottom: 40px;
+    }
+
+    ::placeholder{
+        color:white;
+        opacity:0.5
     }
