@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 
-function Homepage({ socket }) {
-  const [username, setusername] = useState("");
-  const [roomname, setroomname] = useState("");
+const  Home = ({ socket }) => {
+  const [username, setUsername] = useState("");
+  const [roomname, setRoomname] = useState("");
   //activates joinRoom function defined on the backend
   const sendData = () => {
     if (username !== "" && roomname !== "") {
@@ -24,15 +24,13 @@ function Homepage({ socket }) {
         <input
           placeholder="User name"
           value={username}
-          onChange={(e) => setusername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
         ></input>
         <input
           placeholder="Room name"
           value={roomname}
-          onChange={(e) => setroomname(e.target.value)}
+          onChange={(e) => setRoomname(e.target.value)}
         ></input>
-     
-
       <Link to={`/chat/${roomname}/${username}`}>
         <button onClick={sendData}>JOIN</button>
       </Link>
@@ -41,4 +39,4 @@ function Homepage({ socket }) {
   );
 }
 
-export default Homepage;
+export default Home;

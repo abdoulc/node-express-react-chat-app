@@ -1,8 +1,7 @@
 import React from 'react';
 import "./App.css"
-import Chat from "./chat/chat";
-import Process from "./process/process";
-import Home from "./home/home";
+import MessageComponent from "./components/message/Message.js";
+import Home from "./components/home/Home.js";
 import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import io from "socket.io-client";
 
@@ -13,20 +12,18 @@ function Appmain() {
   return (
     <>
       <div className="right">
-        <Chat
+        <MessageComponent
           username={params.username}
           roomname={params.roomname}
           socket={socket}
         />
       </div>
-      {/* <div className="left">
-        <Process />
-      </div> */}
+     
     </>
   );
 }
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div className="App">

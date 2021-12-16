@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./chat.css";
-import { toDecrypt, toEncrypt } from "../aes.js";
-import { process } from "../store/action/index";
+import "./message.css";
+import { toDecrypt, toEncrypt } from "../../appUtils.js";
+import { processMessageAction as process } from "../../store/actions/processMessageAction";
 import { useDispatch } from "react-redux";
 
-function Chat({username, roomname, socket}){
+const MessageComponent =({username, roomname, socket})=>{
     const [text, setText] = useState("");
     const [messages, setMessages] = useState([]);
    
-
     const dispatch =useDispatch();
 
     const dispacthProcess = (encrypt, msg, cipher) =>{
@@ -18,7 +17,6 @@ function Chat({username, roomname, socket}){
 
     useEffect(()=>{
         socket.on("message", (data)=>{
-            console.log('data', data)
             const decrypt_message = toDecrypt(data.text, data.username);
             dispacthProcess(false, decrypt_message, data.text)
 
@@ -60,10 +58,6 @@ function Chat({username, roomname, socket}){
         <div className="user-name">
           <div className="user"> {username} </div> 
           <div className="room"> {roomname} </div> 
-
-          {/* <h2>
-            {username} <span style={{ fontSize: "0.7rem" }}>in {roomname}</span>
-          </h2> */}
         </div>
         <div className="chat-message">
           {messages.map((i) => {
@@ -97,10 +91,9 @@ function Chat({username, roomname, socket}){
               }
             }}
           ></input>
-          {/* <button onClick={sendData}>Send</button> */}
         </div>
       </div>
     )
 }
 
-export default Chat;
+export default MessageComponent;
